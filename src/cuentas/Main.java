@@ -5,8 +5,9 @@
 package cuentas;
 
 /**
- *
+ * Clase principal de la aplicación
  * @author rdrge
+ * @version 06.03.2022
  */
 public class Main {
     static protected CCuenta cuenta1;

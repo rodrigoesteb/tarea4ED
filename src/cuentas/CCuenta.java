@@ -5,21 +5,30 @@
 package cuentas;
 
 /**
- *
+ * Clase CCuenta representa una cuenta bancaria
  * @author rdrge
+ * @version 06.03.2022
  */
 public class CCuenta {
-
-
     private String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
+    /**
+    * Constructor sin arumentos
+    */
     public CCuenta()
     {
     }
 
+    /**
+    * Constructor de la clase
+    * @param nom nombre del titular
+    * @param cue IBAN bancario
+    * @param sal saldo de la cuenta
+    * @param tipo no se utiliza
+    */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -27,11 +36,20 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+    * Método que devuelve el saldo actual de la cuenta
+    * @return saldo actual del objeto CCuenta
+    */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+    * Método que ingresa una cantidad dada por parámetro
+    * @param cantidad cantidad a ingresar
+    * @throws Exception una excepción en caso de intentar ingresar una cantidad negativa
+    */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -39,6 +57,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+    * Método que retira una cantidad dada por parámetro
+    * @param cantidad cantidad a retirar
+    * @throws Exception una excepción en caso de intentar retirar una cantidad negativa o superior al saldo disponible
+    */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
